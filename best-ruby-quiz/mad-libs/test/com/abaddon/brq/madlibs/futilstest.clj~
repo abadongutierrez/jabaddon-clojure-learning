@@ -1,0 +1,25 @@
+(ns com.abaddon.brq.madlibs.futilstest
+    (:use [com.abaddon.brq.madlibs.futils] :reload)
+    (:use [clojure.test]))
+    
+(deftest leer-folder-historias []
+    ; Verifica que se esten leyendo las historias
+    (is (not (= 0 (.size (obtener-historias "."))))))
+
+(deftest historias-debe-ser-un-mapa []
+    (is (map? (obtener-historias "."))))
+
+(deftest debe-existir-la-historia-1 []
+    (is (contains? (keys (obtener-historias ".")) "historia1.txt")))
+
+;(deftest imprimir-folder-historias []
+;    ; imprime las historias en el folder
+;    (doseq [historia (obtener-historias "./historias")]
+;        ((println (key historia)
+;        (println (val historia))))))
+
+(deftest debe-devolver-el-numero-correcto-de-preguntas-de-una-historia []
+    (is (= 3 (.size (obtener-preguntas-de-historia "historia1.txt")))))
+
+(deftest factorial []
+    (println "Factorial de 10 = [" (fact-loop 10) "]"))

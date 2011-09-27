@@ -1,0 +1,25 @@
+(ns com.abaddon.brq.madlibs.futils
+    (:import [org.apache.commons.io FileUtils]
+             [java.io File]))
+
+(defn obtener-historias [ruta]
+    (map (fn [item] (assoc (hash-map) (.getName item) (FileUtils/readFileToString item)))
+        (FileUtils/listFiles (new File ruta) (into-array String (list "txt")) true)))
+
+(defn obtener-preguntas-de-historia [historia]
+    ())
+
+(defn oh [ruta]
+    (let [historias (FileUtils/listFiles (new File ruta) (into-array String (list "txt")) true)
+          sizeHistorias (.si    ze historias)]
+        (loop [size sizeHistorias mapa (hash-map)]
+            (if (= size -1)
+                mapa
+                (recur (dec size) (assoc mapa (get historias size) )))
+
+(defn fact-loop [n]
+    (loop [current n fact 1]
+        (if (= current 1)
+            fact
+            (recur (dec current) (* fact current)))))
+

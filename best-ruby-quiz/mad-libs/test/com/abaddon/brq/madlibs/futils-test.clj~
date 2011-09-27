@@ -1,0 +1,5 @@
+(ns com.abaddon.brq.madlibs.futils-test
+    (:use [clojure.test]))
+    
+(deftest leer-folder-historias
+    (is (not (= 0 (leer-folder-historias "")))))
