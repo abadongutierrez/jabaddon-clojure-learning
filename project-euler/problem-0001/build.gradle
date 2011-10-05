@@ -1,18 +1,5 @@
 apply plugin: "clojure"
 
-sourceSets {
-    main {
-        clojure {
-            srcDir 'src'
-        }
-    }
-    test {
-        clojure {
-            srcDir 'test'
-        }
-    }
-}
-
 repositories {
     mavenCentral()
     clojarsRepo()
