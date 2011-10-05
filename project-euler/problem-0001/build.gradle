@@ -1,0 +1,23 @@
+apply plugin: "clojure"
+
+sourceSets {
+    main {
+        clojure {
+            srcDir 'src'
+        }
+    }
+    test {
+        clojure {
+            srcDir 'test'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    clojarsRepo()
+}
+
+dependencies {
+    compile 'org.clojure:clojure:1.2.1'
+}
