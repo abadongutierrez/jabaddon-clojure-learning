@@ -4,7 +4,7 @@ Project Euler solucion al Problema 1 con Clojure
 
 ## Usage
 
-lein test
+mvn test
 
 ## License
 
